@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&family=Qwigley&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --bg: #ffffff;
+  --fg: #0a0a0a;
+  --muted: #525252;
+  --line: #e5e5e5;
+  --surface: #ffffff;
+}
+
+.dark {
+  color-scheme: dark;
+  --bg: #000000;
+  --fg: #f5f5f5;
+  --muted: #a3a3a3;
+  --line: #262626;
+  --surface: #0a0a0a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Inter, system-ui, sans-serif;
+  transition: background-color 250ms ease, color 250ms ease;
+}
+
+.glass {
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.font-script {
+  font-family: "Qwigley", cursive;
+  letter-spacing: 0.01em;
+}
+
+.text-gradient {
+  color: inherit;
+}
+
+.ambient-glow::before {
+  display: none;
+}
+
+.waveform {
+  display: flex;
+  align-items: end;
+  gap: 0.2rem;
+  height: 1.2rem;
+}
+
+.waveform span {
+  width: 0.18rem;
+  border-radius: 100px;
+  background: currentColor;
+  animation: wave 1s ease-in-out infinite;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.waveform span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.waveform span:nth-child(3) {
+  animation-delay: 0.25s;
+}
+
+.waveform span:nth-child(4) {
+  animation-delay: 0.35s;
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    height: 0.25rem;
+    opacity: 0.6;
+  }
+  50% {
+    height: 1.2rem;
+    opacity: 1;
+  }
+}
+
+.masonry {
+  column-count: 1;
+  column-gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .masonry {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry {
+    column-count: 3;
+  }
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+}
