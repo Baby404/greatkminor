@@ -237,7 +237,16 @@ export function AboutPreview() {
         <Button href="/about">Read Full Story</Button>
       </div>
       <div className="relative overflow-hidden rounded-3xl border border-zinc-200 dark:border-zinc-800">
-        <Image src={aboutImage} alt="Great Kminor on stage" width={1000} height={700} quality={100} sizes="(min-width: 1024px) 47vw, 94vw" className="h-full w-full object-cover" />
+        <Image
+          src={aboutImage}
+          alt="Great Kminor on stage"
+          width={1000}
+          height={700}
+          quality={100}
+          unoptimized
+          sizes="(min-width: 1024px) 47vw, 94vw"
+          className="h-full w-full object-cover"
+        />
       </div>
     </section>
   );
@@ -249,7 +258,17 @@ export function GalleryPreview() {
       <SectionHeading eyebrow="Visual Journey" title="Performance & Studio Moments" action={<Button href="/gallery" variant="ghost">Open Gallery</Button>} />
       <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-6">
         {[galleryImage1, galleryImage2, galleryImage3, galleryImage4, galleryImage5, galleryImage6].map((src, i) => (
-          <Image key={i} src={src} alt="Great Kminor gallery preview" width={700} height={500} quality={100} sizes="(min-width: 1024px) 15vw, (min-width: 768px) 30vw, 94vw" className="h-64 w-full rounded-2xl object-cover" />
+          <Image
+            key={i}
+            src={src}
+            alt="Great Kminor gallery preview"
+            width={700}
+            height={500}
+            quality={100}
+            unoptimized
+            sizes="(min-width: 1024px) 15vw, (min-width: 768px) 30vw, 94vw"
+            className="h-64 w-full rounded-2xl object-cover"
+          />
         ))}
       </div>
     </section>
