@@ -81,7 +81,15 @@ export function GalleryMasonry() {
     <div className="masonry">
       {images.map((src, idx) => (
         <div className="masonry-item" key={`${src}-${idx}`}>
-          <Image src={src} alt="Great Kminor gallery" width={700} height={900} className="h-auto w-full rounded-2xl" />
+          <Image
+            src={src}
+            alt="Great Kminor gallery"
+            width={700}
+            height={900}
+            quality={100}
+            sizes="(min-width: 1280px) 23vw, (min-width: 768px) 31vw, 94vw"
+            className="h-auto w-full rounded-2xl"
+          />
         </div>
       ))}
     </div>

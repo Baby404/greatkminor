@@ -44,7 +44,7 @@ async function getLatestVideos(): Promise<YouTubeVideo[]> {
         id: videoId,
         title,
         url: `https://www.youtube.com/watch?v=${videoId}`,
-        thumbnail: `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`,
+        thumbnail: `https://i.ytimg.com/vi/${videoId}/sddefault.jpg`,
         published
       };
     }).sort((a, b) => new Date(b.published).getTime() - new Date(a.published).getTime());

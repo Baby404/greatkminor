@@ -25,7 +25,7 @@ export function HomeHero() {
           viewport={{ once: true }}
           className="relative h-[78vh] min-h-[560px] w-full overflow-hidden rounded-3xl border border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-950"
         >
-          <Image src={heroImage} alt="Great Kminor portrait" fill priority className="object-contain object-bottom" />
+          <Image src={heroImage} alt="Great Kminor portrait" fill priority quality={100} sizes="94vw" className="object-contain object-bottom" />
           <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-white via-white/90 to-transparent p-5 dark:from-black dark:via-black/90">
             <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger}>
               <motion.p variants={fadeUp} className="mb-2 text-[10px] uppercase tracking-[0.35em] text-zinc-500 dark:text-zinc-400">
@@ -95,7 +95,9 @@ export function HomeHero() {
             alt="Great Kminor portrait"
             fill
             priority
-            className="object-contain object-bottom lg:scale-110"
+            quality={100}
+            sizes="(min-width: 1024px) 52vw, 94vw"
+            className="object-contain object-bottom"
           />
         </motion.div>
       </div>
@@ -235,13 +237,7 @@ export function AboutPreview() {
         <Button href="/about">Read Full Story</Button>
       </div>
       <div className="relative overflow-hidden rounded-3xl border border-zinc-200 dark:border-zinc-800">
-        <Image
-          src={aboutImage}
-          alt="Great Kminor on stage"
-          width={1000}
-          height={700}
-          className="h-full w-full object-cover"
-        />
+        <Image src={aboutImage} alt="Great Kminor on stage" width={1000} height={700} quality={100} sizes="(min-width: 1024px) 47vw, 94vw" className="h-full w-full object-cover" />
       </div>
     </section>
   );
@@ -253,7 +249,7 @@ export function GalleryPreview() {
       <SectionHeading eyebrow="Visual Journey" title="Performance & Studio Moments" action={<Button href="/gallery" variant="ghost">Open Gallery</Button>} />
       <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-6">
         {[galleryImage1, galleryImage2, galleryImage3, galleryImage4, galleryImage5, galleryImage6].map((src, i) => (
-          <Image key={i} src={src} alt="Great Kminor gallery preview" width={700} height={500} className="h-64 w-full rounded-2xl object-cover" />
+          <Image key={i} src={src} alt="Great Kminor gallery preview" width={700} height={500} quality={100} sizes="(min-width: 1024px) 15vw, (min-width: 768px) 30vw, 94vw" className="h-64 w-full rounded-2xl object-cover" />
         ))}
       </div>
     </section>
