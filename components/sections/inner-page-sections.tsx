@@ -79,19 +79,30 @@ export function GalleryMasonry() {
   ];
   return (
     <div className="masonry">
-      {images.map((src, idx) => (
-        <div className="masonry-item" key={`${src}-${idx}`}>
-          <Image
-            src={src}
-            alt="Great Kminor gallery"
-            width={700}
-            height={900}
-            quality={100}
-            sizes="(min-width: 1280px) 23vw, (min-width: 768px) 31vw, 94vw"
-            className="h-auto w-full rounded-2xl"
-          />
-        </div>
-      ))}
+      {images.map((src, idx) => {
+        const fullSrc = typeof src === "string" ? src : src.src;
+
+        return (
+          <a
+            className="masonry-item block"
+            key={`${fullSrc}-${idx}`}
+            href={fullSrc}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Open gallery image"
+          >
+            <Image
+              src={src}
+              alt="Great Kminor gallery"
+              width={700}
+              height={900}
+              quality={100}
+              sizes="(min-width: 1280px) 23vw, (min-width: 768px) 31vw, 94vw"
+              className="h-auto w-full rounded-2xl transition-transform duration-300 hover:scale-[1.01]"
+            />
+          </a>
+        );
+      })}
     </div>
   );
 }

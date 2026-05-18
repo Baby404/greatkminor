@@ -3,8 +3,8 @@ import {
   FeaturedMusic,
   GalleryPreview,
   HomeHero,
-  TestimonialsNewsletter,
-  UpcomingEventsPreview
+  ServicesPreview,
+  TestimonialsNewsletter
 } from "@/components/sections/home-sections";
 import { RecentVideos } from "@/components/sections/recent-videos";
 
@@ -13,8 +13,8 @@ export default function HomePage() {
     <>
       <HomeHero />
       <FeaturedMusic />
+      <ServicesPreview />
       <RecentVideos />
-      <UpcomingEventsPreview />
       <AboutPreview />
       <GalleryPreview />
       <TestimonialsNewsletter />

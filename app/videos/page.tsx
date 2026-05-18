@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type YouTubeVideo = {
   id: string;
   title: string;
@@ -44,7 +46,7 @@ async function getLatestVideos(): Promise<YouTubeVideo[]> {
         id: videoId,
         title,
         url: `https://www.youtube.com/watch?v=${videoId}`,
-        thumbnail: `https://i.ytimg.com/vi/${videoId}/sddefault.jpg`,
+        thumbnail: `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`,
         published
       };
     }).sort((a, b) => new Date(b.published).getTime() - new Date(a.published).getTime());
@@ -73,7 +75,15 @@ export default async function VideosPage() {
             rel="noreferrer"
             className="glass block overflow-hidden rounded-2xl"
           >
-            <img src={video.thumbnail} alt={video.title} className="aspect-video w-full object-cover" loading="lazy" />
+            <Image
+              src={video.thumbnail}
+              alt={video.title}
+              width={1280}
+              height={720}
+              quality={100}
+              sizes="(min-width: 1024px) 31vw, (min-width: 640px) 47vw, 94vw"
+              className="aspect-video w-full object-cover"
+            />
             <div className="p-3">
               <p className="line-clamp-2 text-sm font-medium text-zinc-800 dark:text-zinc-100">{video.title}</p>
             </div>

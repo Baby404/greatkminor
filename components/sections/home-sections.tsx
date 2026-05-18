@@ -3,10 +3,10 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import heroImage from "@/components/brand/hero.png";
-import aboutImage from "@/components/brand/greatkminor (19).jpg";
-import galleryImage1 from "@/components/brand/greatkminor (1).jpg";
-import galleryImage2 from "@/components/brand/greatkminor (2).jpg";
-import galleryImage3 from "@/components/brand/greatkminor (3).jpg";
+import aboutImage from "@/components/brand/hero.png";
+import galleryImage1 from "@/components/brand/greatkminor aa.jpg";
+import galleryImage2 from "@/components/brand/greatkminor aaa.jpeg";
+import galleryImage3 from "@/components/brand/greatkminor sw.jpeg";
 import galleryImage4 from "@/components/brand/greatkminor (13).jpg";
 import galleryImage5 from "@/components/brand/greatkminor (14).jpg";
 import galleryImage6 from "@/components/brand/greatkminor (15).jpg";
@@ -164,6 +164,34 @@ export function FeaturedMusic() {
   );
 }
 
+export function ServicesPreview() {
+  const services = [
+    "Live Band",
+    "Corporate/Social Event",
+    "Online Guitar Training",
+    "Live Ministration"
+  ];
+
+  return (
+    <section className="mx-auto w-[94%] max-w-7xl py-20">
+      <SectionHeading
+        eyebrow="My Services"
+        title="Professional Music Services"
+        subtitle="Book Great Kminor for live performances, training, and premium event experiences."
+        action={<Button href="/services" variant="ghost">View Services Page</Button>}
+      />
+
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {services.map((service) => (
+          <article key={service} className="glass rounded-2xl p-5">
+            <h3 className="font-display text-2xl text-zinc-900 dark:text-zinc-100">{service}</h3>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 export function RecentVideos() {
   return (
     <section className="mx-auto w-[94%] max-w-7xl py-20">
@@ -222,8 +250,8 @@ export function UpcomingEventsPreview() {
 
 export function AboutPreview() {
   return (
-    <section className="mx-auto grid w-[94%] max-w-7xl gap-8 py-20 lg:grid-cols-2 lg:items-center">
-      <div>
+    <section className="mx-auto grid w-[94%] max-w-7xl gap-8 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+      <div className="order-2 lg:order-1">
         <p className="text-xs uppercase tracking-[0.3em] text-zinc-500 dark:text-zinc-400">What you like to know</p>
         <SectionHeading
           eyebrow="My Biography"
@@ -236,17 +264,17 @@ export function AboutPreview() {
         </p>
         <Button href="/about">Read Full Story</Button>
       </div>
-      <div className="relative overflow-hidden rounded-3xl border border-zinc-200 dark:border-zinc-800">
+      <div className="order-1 lg:order-2">
+        <div className="relative mx-auto aspect-[4/5] w-full max-w-[520px] overflow-hidden rounded-3xl border border-zinc-200 bg-zinc-100 dark:border-zinc-800 dark:bg-zinc-900">
         <Image
           src={aboutImage}
           alt="Great Kminor on stage"
-          width={1000}
-          height={700}
+          fill
           quality={100}
-          unoptimized
-          sizes="(min-width: 1024px) 47vw, 94vw"
-          className="h-full w-full object-cover"
+          sizes="(min-width: 1024px) 34vw, (min-width: 768px) 60vw, 94vw"
+          className="object-cover object-center"
         />
+        </div>
       </div>
     </section>
   );
@@ -265,7 +293,6 @@ export function GalleryPreview() {
             width={700}
             height={500}
             quality={100}
-            unoptimized
             sizes="(min-width: 1024px) 15vw, (min-width: 768px) 30vw, 94vw"
             className="h-64 w-full rounded-2xl object-cover"
           />
