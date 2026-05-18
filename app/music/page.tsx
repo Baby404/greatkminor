@@ -1,4 +1,4 @@
-import { ContentSection } from "@/components/sections/inner-page-sections";
+import { ContentSection, PageHero } from "@/components/sections/inner-page-sections";
 import { Button } from "@/components/ui/button";
 import { TRACKS, getTrackData } from "@/lib/fanlink";
 
@@ -12,6 +12,10 @@ export default function MusicPage() {
 
   return tracksPromise.then((tracks) => (
     <>
+      <PageHero
+        title="Music Hub"
+        subtitle="Stream official releases and enjoy the latest performance content across your favorite platforms."
+      />
       <ContentSection title="Featured Release">
         <div className="glass rounded-3xl p-6">
           <p className="text-xs uppercase tracking-[0.3em] text-zinc-500 dark:text-zinc-400">New Release</p>
@@ -66,6 +70,18 @@ export default function MusicPage() {
               </article>
             );
           })}
+        </div>
+      </ContentSection>
+
+      <ContentSection title="Watch More Performances">
+        <div className="glass rounded-3xl p-8 text-center">
+          <p className="mx-auto max-w-3xl text-sm leading-relaxed text-zinc-700 dark:text-zinc-300 md:text-base">
+            Prefer live performance moments? Explore recent visual content and curated stage clips from Great Kminor’s official channels.
+          </p>
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            <Button href="https://youtube.com/@great_kminor?si=tjUpiKL_VZTm_vpH">Visit YouTube</Button>
+            <Button href="/contact" variant="ghost">Book a Live Performance</Button>
+          </div>
         </div>
       </ContentSection>
     </>

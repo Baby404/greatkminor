@@ -1,4 +1,5 @@
-import { ContentSection, GenericGrid } from "@/components/sections/inner-page-sections";
+import { ContentSection, GenericGrid, PageHero } from "@/components/sections/inner-page-sections";
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import aboutImage1 from "@/components/brand/IMG_5415.JPG.jpeg";
 import aboutImage2 from "@/components/brand/greatkminor (4).png";
@@ -6,6 +7,10 @@ import aboutImage2 from "@/components/brand/greatkminor (4).png";
 export default function AboutPage() {
   return (
     <>
+      <PageHero
+        title="About Great Kminor"
+        subtitle="Professional guitarist, recording artist, and live performer building memorable experiences across concerts, social events, and cultural stages."
+      />
       <ContentSection title="Biography">
         <div className="grid gap-6 lg:grid-cols-5">
           <div className="glass overflow-hidden rounded-3xl lg:col-span-2">
@@ -106,6 +111,19 @@ export default function AboutPage() {
               className="h-full w-full object-cover object-center"
             />
             </div>
+          </div>
+        </div>
+      </ContentSection>
+
+      <ContentSection title="Work With Great Kminor">
+        <div className="glass rounded-3xl p-8 text-center">
+          <p className="mx-auto max-w-3xl text-sm leading-relaxed text-zinc-700 dark:text-zinc-300 md:text-base">
+            Looking for a refined live guitar experience, a culturally rich stage performance, or premium musical direction for your event?
+            Let’s create a set that fits your audience and atmosphere.
+          </p>
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            <Button href="/services">View Services</Button>
+            <Button href="/contact" variant="ghost">Start Booking</Button>
           </div>
         </div>
       </ContentSection>

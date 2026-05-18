@@ -282,7 +282,7 @@ export function RecentVideos() {
 export function UpcomingEventsPreview() {
   return (
     <section className="mx-auto w-[94%] max-w-7xl py-20">
-      <SectionHeading eyebrow="Upcoming Events" title="Ministrations & Concerts" action={<Button href="/events" variant="ghost">View All</Button>} />
+      <SectionHeading eyebrow="Upcoming Events" title="Ministrations & Concerts" action={<Button href="/contact" variant="ghost">Book an Event</Button>} />
       <div className="space-y-4">
         {events.map((event) => (
           <div key={event.date + event.city} className="glass flex flex-wrap items-center justify-between gap-4 rounded-2xl p-5">
@@ -330,7 +330,7 @@ export function AboutPreview() {
 export function GalleryPreview() {
   return (
     <section className="mx-auto w-[94%] max-w-7xl py-20">
-      <SectionHeading eyebrow="Visual Journey" title="Performance & Studio Moments" action={<Button href="/gallery" variant="ghost">Open Gallery</Button>} />
+      <SectionHeading eyebrow="Visual Journey" title="Performance & Studio Moments" action={<Button href="/about" variant="ghost">View More Moments</Button>} />
       <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-6">
         {[galleryImage1, galleryImage2, galleryImage3, galleryImage4, galleryImage5, galleryImage6].map((src, i) => (
           <Image

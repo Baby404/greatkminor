@@ -2,6 +2,18 @@ import Link from "next/link";
 import { GkLogo } from "@/components/brand/gk-logo";
 import { socialLinks } from "@/lib/data";
 
+const siteLinks = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/music", label: "Music" },
+  { href: "/videos", label: "Videos" },
+  { href: "/services", label: "Services" },
+  { href: "/gallery", label: "Gallery" },
+  { href: "/guitar-institute", label: "Guitar Institute" },
+  { href: "/gk-band", label: "GK Band" },
+  { href: "/contact", label: "Contact" }
+];
+
 function PlatformIcon({ label }: { label: string }) {
   const cls = "h-4 w-4";
 
@@ -94,6 +106,23 @@ export function Footer() {
           <p className="mt-2 max-w-xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
             Gospel Guitarist • Worship Leader • Recording Artist
           </p>
+
+          <div className="mt-5">
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">Explore All Pages</p>
+          </div>
+
+          <div className="flex flex-wrap gap-2">
+            {siteLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="accent-chip inline-flex rounded-full px-3 py-1.5 text-xs font-medium text-zinc-700 transition hover:-translate-y-0.5 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-100"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+
           <p className="mt-4 text-xs text-zinc-500 dark:text-zinc-500">
             © {new Date().getFullYear()} Great Kminor. All rights reserved.
           </p>

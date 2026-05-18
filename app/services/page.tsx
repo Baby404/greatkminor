@@ -70,12 +70,13 @@ const faqs = [
   }
 ];
 
+
 export default function ServicesPage() {
   return (
     <>
       <PageHero
-        title="My Services"
-        subtitle="Professional music services for live events, ministry, training, and premium performance experiences."
+        title="Services & Booking"
+        subtitle="Live performance, premium event music, and professional guitar mentorship tailored to your audience and goals."
       />
 
       <ContentSection title="Available Services">
@@ -130,6 +131,7 @@ export default function ServicesPage() {
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Button href="/contact">Book Now</Button>
             <Button href="/music" variant="ghost">Listen First</Button>
+            <Button href="/about" variant="ghost">Read Full Profile</Button>
           </div>
         </div>
       </ContentSection>
