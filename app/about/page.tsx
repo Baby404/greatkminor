@@ -8,7 +8,7 @@ export default function AboutPage() {
     <>
       <PageHero
         title="About Me"
-        subtitle="Meet Great Kminor: A Journey Through Music"
+        subtitle="Great Kminor – Professional Profile"
       />
       <ContentSection title="Biography">
         <div className="grid gap-6 lg:grid-cols-5">
@@ -22,24 +22,45 @@ export default function AboutPage() {
           </div>
           <div className="glass rounded-3xl p-6 md:p-8 lg:col-span-3">
             <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-300 md:text-base">
-              Great Kminor, born Ayokunle Moses Okundare, is a talented guitarist and recording music artist who embarked on his
-              musical journey at the tender age of fifteen. His passion for music led him to enroll in a one-year basic course in
-              Guitar and Music Theory at the MAC AYLIT (Music Art and Creativity As You Like It) Institute. By the end of this
-              intensive training, he had mastered various genres of music and earned recommendations to collaborate with several
-              prominent artists including Emma OhMyGod, Laolu Gbenjo, BBO, Yetunde Are, Haruna Ishola, Dare Another Level,
-              Gbenga Akinfenwa, and Dr. Evang Bola Are.
+              Great Kminor is a genre-defining professional guitarist, recording artist, and live performer whose work bridges
+              culture, creativity, and contemporary sound. Blending soul, jazz, Afro-fusion, and modern acoustic expression, he has
+              developed a distinctive urban contemporary style that resonates across international audiences and diverse performance
+              spaces.
             </p>
             <p className="mt-4 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300 md:text-base">
-              In 2013, driven by a desire to share his knowledge and skills with others, Great Kminor founded the Kminor Guitar
-              Institute. Since its inception, the institute has successfully trained over 450 aspiring guitarists worldwide.
+              Certified with a Diploma in Guitar and Music Theory from the MAC-AYLIT Institute, Nigeria, Great Kminor combines
+              strong technical mastery with emotive interpretation. His performance career spans high-profile social events,
+              international conferences, concerts, cultural festivals, and curated artistic showcases across multiple countries.
+              Known for his dynamic phrasing and genre versatility, he delivers performances that are both technically refined and
+              emotionally engaging.
             </p>
             <p className="mt-4 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300 md:text-base">
-              By 2014, Great Kminor had established himself as both a live performing artist and recording musician. He developed
-              a unique style that blends urban contemporary music with exceptional lead guitar techniques that enchant audiences
-              globally. His dynamic performances have graced numerous live concerts and corporate events across Nigeria and the
-              United Kingdom. Currently serving as the Resident Lead Guitarist at RCCG City Of David in Walderslade, Chatham
-              (UK), Great Kminor has released his debut single along with several tracks available on all digital platforms; an EP
-              and album are forthcoming. He has been featured on various projects that highlight his artistic prowess.
+              Now based in the United Kingdom, Great Kminor operates within one of the world’s most structured creative industries,
+              where he continues to expand his artistic footprint through live performances, cultural collaborations, and
+              cross-border creative projects. His exposure to the UK’s professional arts ecosystem has strengthened his approach to
+              artistic development, creative entrepreneurship, and long-term industry sustainability.
+            </p>
+            <p className="mt-4 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300 md:text-base">
+              Great Kminor has established a reputation for moving seamlessly between performance environments, from concert stages
+              and art festivals to luxury weddings and exclusive private events. His ability to adapt his sound while maintaining a
+              clear artistic identity has positioned him as a sought-after live instrumentalist capable of connecting with
+              multicultural audiences.
+            </p>
+            <p className="mt-4 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300 md:text-base">
+              Beyond performance, he is deeply committed to mentorship and creative development. Through structured teaching and
+              masterclass sessions, he has influenced and trained emerging guitarists across Europe, North America, and the Middle
+              East, including Germany, Italy, Canada, Dubai, and the United States. His work contributes to the growth of
+              contemporary guitar performance and cross-cultural music exchange on a global scale.
+            </p>
+            <p className="mt-4 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300 md:text-base">
+              With notable record releases and collaborative projects, Great Kminor continues to evolve as both a performing artist
+              and creative visionary. His music reinterprets classics, introduces original compositions, and presents instrumental
+              storytelling in a way that feels modern yet rooted. A student of sound and curator of immersive musical experiences,
+              he approaches every stage with intentionality and artistic precision.
+            </p>
+            <p className="mt-4 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300 md:text-base">
+              Great Kminor believes music should transcend entertainment and connect cultures, create atmosphere, and leave lasting
+              impact.
             </p>
           </div>
         </div>
@@ -49,15 +70,15 @@ export default function AboutPage() {
           items={[
             {
               title: "Stage Collaborations",
-              text: "Great Kminor's stage presence is formidable—he has shared stages with renowned artists such as Don Moen, Tosin Bee, Dr Bola Are, Beejay Sax, EmmaOhMyGod, and BBO among others."
+              text: "Great Kminor has built a strong cross-genre performance reputation, collaborating with artists and creatives across worship, contemporary, and mainstream live-event spaces."
             },
             {
-              title: "Education",
-              text: "In addition to his musical pursuits, he holds a Bachelor's Degree in Geography from Olabisi Onabanjo University (2011–2015)."
+              title: "Training & Mentorship",
+              text: "Through structured coaching and masterclass sessions, he has trained and influenced emerging guitarists across Europe, North America, and the Middle East."
             },
             {
               title: "Leadership & Vision",
-              text: "He serves as the founder and Creative Director of GK Band while leading the Praise Campaign movement since 2017—a yearly Praise Tour across towns in Nigeria."
+              text: "He continues to expand his global creative footprint through live performances, cultural collaborations, and cross-border artistic projects with a focus on excellence and sustainability."
             }
           ]}
         />
@@ -66,16 +87,16 @@ export default function AboutPage() {
         <div className="grid gap-8 lg:grid-cols-[1.35fr_0.65fr] lg:items-start">
           <div className="order-2 lg:order-1">
             <p className="text-base leading-relaxed text-zinc-700 dark:text-zinc-300 md:text-lg">
-              With numerous accolades for captivating performances and insightful interviews about his growth within the industry,
-              Great Kminor continues to inspire many through his dedication to music and faith-driven endeavors.
+              Great Kminor continues to inspire audiences through excellence, versatility, and intentional artistry that connects
+              with people across cultures and event spaces.
             </p>
             <p className="mt-4 text-base leading-relaxed text-zinc-700 dark:text-zinc-300 md:text-lg">
-              Beyond the stage, his impact is seen in the lives he has mentored, the worship teams he has strengthened, and the
-              audiences he has moved through excellence in sound and spirit-led expression.
+              Beyond the stage, his impact is seen in the lives he has mentored, the creatives he has developed, and the communities
+              he has served through innovative and emotionally resonant performance.
             </p>
             <p className="mt-4 text-base leading-relaxed text-zinc-700 dark:text-zinc-300 md:text-lg">
-              Through consistent discipline, creativity, and service, Great Kminor has built a legacy that bridges artistry and
-              ministry—raising a new standard for guitar performance within gospel and contemporary music spaces.
+              His philosophy is simple yet powerful: music should transcend entertainment, shape atmosphere, and leave lasting
+              impact.
             </p>
           </div>
           <div className="order-1 lg:order-2">
