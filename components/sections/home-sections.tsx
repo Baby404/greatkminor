@@ -190,10 +190,30 @@ export function FeaturedMusic() {
 
 export function ServicesPreview() {
   const services = [
-    "Live Band",
-    "Corporate/Social Event",
-    "Online Guitar Training",
-    "Live Ministration"
+    {
+      title: "Live Band",
+      icon: "🎸",
+      description:
+        "A complete live music experience for concerts, weddings, receptions, and premium celebrations with professional stage coordination and rich instrumentation."
+    },
+    {
+      title: "Corporate/Social Event",
+      icon: "🎤",
+      description:
+        "Refined guitar-led live sets tailored for corporate dinners, conferences, networking events, birthdays, and private gatherings with the right ambience."
+    },
+    {
+      title: "Online Guitar Training",
+      icon: "🎼",
+      description:
+        "Structured one-on-one and group coaching covering technique, tone development, improvisation, and performance confidence for beginner to advanced players."
+    },
+    {
+      title: "Live Ministration",
+      icon: "🙏",
+      description:
+        "Spirit-filled instrumental worship sessions for church programs, worship nights, conferences, and faith-based events with musical excellence and sensitivity."
+    }
   ];
 
   return (
@@ -205,10 +225,14 @@ export function ServicesPreview() {
         action={<Button href="/services" variant="ghost">View Services Page</Button>}
       />
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {services.map((service) => (
-          <article key={service} className="glass rounded-2xl p-5">
-            <h3 className="font-display text-2xl text-zinc-900 dark:text-zinc-100">{service}</h3>
+          <article key={service.title} className="glass rounded-2xl p-5">
+            <span className="accent-chip inline-flex h-10 w-10 items-center justify-center rounded-full text-lg" aria-hidden="true">
+              {service.icon}
+            </span>
+            <h3 className="font-display text-2xl text-zinc-900 dark:text-zinc-100">{service.title}</h3>
+            <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">{service.description}</p>
           </article>
         ))}
       </div>
@@ -276,7 +300,6 @@ export function AboutPreview() {
   return (
     <section className="mx-auto grid w-[94%] max-w-7xl gap-8 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
       <div className="order-2 lg:order-1">
-        <p className="text-xs uppercase tracking-[0.3em] text-zinc-500 dark:text-zinc-400">What you like to know</p>
         <SectionHeading
           eyebrow="My Biography"
           title="From Ogun State to Notable Stages"

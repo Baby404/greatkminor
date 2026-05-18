@@ -1,15 +1,11 @@
-import { ContentSection, GenericGrid, PageHero } from "@/components/sections/inner-page-sections";
+import { ContentSection, GenericGrid } from "@/components/sections/inner-page-sections";
 import Image from "next/image";
-import aboutImage1 from "@/components/brand/greatkminor (1).png";
+import aboutImage1 from "@/components/brand/IMG_5415.JPG.jpeg";
 import aboutImage2 from "@/components/brand/greatkminor (4).png";
 
 export default function AboutPage() {
   return (
     <>
-      <PageHero
-        title="About Me"
-        subtitle="Great Kminor – Professional Profile"
-      />
       <ContentSection title="Biography">
         <div className="grid gap-6 lg:grid-cols-5">
           <div className="glass overflow-hidden rounded-3xl lg:col-span-2">

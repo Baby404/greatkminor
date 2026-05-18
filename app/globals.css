@@ -11,6 +11,9 @@
   --muted: #525252;
   --line: #e5e5e5;
   --surface: #ffffff;
+  --accent-amber: #f59e0b;
+  --accent-orange: #ea580c;
+  --accent-gold: #fbbf24;
 }
 
 .dark {
@@ -20,6 +23,9 @@
   --muted: #a3a3a3;
   --line: #262626;
   --surface: #0a0a0a;
+  --accent-amber: #fbbf24;
+  --accent-orange: #f97316;
+  --accent-gold: #fcd34d;
 }
 
 * {
@@ -51,7 +57,27 @@ body {
 }
 
 .text-gradient {
-  color: inherit;
+  background: linear-gradient(110deg, var(--accent-gold) 10%, var(--accent-orange) 45%, var(--accent-amber) 85%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.accent-chip {
+  border: 1px solid color-mix(in oklab, var(--accent-orange) 30%, transparent);
+  background: color-mix(in oklab, var(--accent-gold) 10%, transparent);
+}
+
+.accent-soft {
+  color: color-mix(in oklab, var(--accent-orange) 72%, #111 28%);
+}
+
+.dark .accent-soft {
+  color: color-mix(in oklab, var(--accent-gold) 78%, #fff 22%);
+}
+
+.accent-ring {
+  box-shadow: 0 0 0 1px color-mix(in oklab, var(--accent-orange) 28%, transparent) inset;
 }
 
 .ambient-glow::before {

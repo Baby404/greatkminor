@@ -1,4 +1,4 @@
-import { ContentSection, GenericGrid, PageHero } from "@/components/sections/inner-page-sections";
+import { ContentSection } from "@/components/sections/inner-page-sections";
 import { Button } from "@/components/ui/button";
 import { TRACKS, getTrackData } from "@/lib/fanlink";
 
@@ -12,10 +12,6 @@ export default function MusicPage() {
 
   return tracksPromise.then((tracks) => (
     <>
-      <PageHero
-        title="Releases & Streaming"
-        subtitle="Singles, EPs, and Albums crafted for worship atmospheres and personal devotion."
-      />
       <ContentSection title="Featured Release">
         <div className="glass rounded-3xl p-6">
           <p className="text-xs uppercase tracking-[0.3em] text-zinc-500 dark:text-zinc-400">New Release</p>

@@ -67,7 +67,9 @@ export async function RecentVideos() {
     <section className="mx-auto w-[94%] max-w-7xl py-20">
       <div className="mb-8 md:mb-12">
         <p className="mb-2 text-xs uppercase tracking-[0.3em] text-zinc-500 dark:text-zinc-400">Recent Videos</p>
-        <h2 className="font-display text-3xl text-zinc-900 dark:text-zinc-100 md:text-5xl">Unusual Praise Medley Live</h2>
+        <h2 className="font-display text-3xl text-zinc-900 dark:text-zinc-100 md:text-5xl">
+          <span className="text-gradient">Unusual Praise Medley Live</span>
+        </h2>
       </div>
 
       <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
