@@ -52,60 +52,20 @@ export default function GuitarInstitutePage() {
         </div>
       </ContentSection>
 
-      <ContentSection title="Guitar Institute Registration Form">
-        <form className="glass space-y-4 rounded-3xl p-6">
-          <div className="grid gap-4 md:grid-cols-2">
-            <input className="w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 text-zinc-900 outline-none ring-zinc-400 focus:ring dark:border-zinc-700 dark:bg-black dark:text-zinc-100" placeholder="Full Name" />
-            <input className="w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 text-zinc-900 outline-none ring-zinc-400 focus:ring dark:border-zinc-700 dark:bg-black dark:text-zinc-100" placeholder="Email Address" />
-          </div>
-
-          <div className="grid gap-4 md:grid-cols-2">
-            <input className="w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 text-zinc-900 outline-none ring-zinc-400 focus:ring dark:border-zinc-700 dark:bg-black dark:text-zinc-100" placeholder="Phone Number" />
-            <input className="w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 text-zinc-900 outline-none ring-zinc-400 focus:ring dark:border-zinc-700 dark:bg-black dark:text-zinc-100" placeholder="Country / City" />
-          </div>
-
-          <div className="grid gap-4 md:grid-cols-2">
-            <select defaultValue="" className="w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 text-zinc-900 outline-none ring-zinc-400 focus:ring dark:border-zinc-700 dark:bg-black dark:text-zinc-100">
-              <option value="" disabled>
-                Current Skill Level
-              </option>
-              <option>Beginner</option>
-              <option>Intermediate</option>
-              <option>Advanced</option>
-            </select>
-
-            <select defaultValue="" className="w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 text-zinc-900 outline-none ring-zinc-400 focus:ring dark:border-zinc-700 dark:bg-black dark:text-zinc-100">
-              <option value="" disabled>
-                Preferred Training Track
-              </option>
-              <option>Beginner Guitar Foundations</option>
-              <option>Contemporary Lead Guitar Development</option>
-              <option>Stage, Session & Tone Excellence</option>
-            </select>
-          </div>
-
-          <div className="grid gap-4 md:grid-cols-2">
-            <select defaultValue="" className="w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 text-zinc-900 outline-none ring-zinc-400 focus:ring dark:border-zinc-700 dark:bg-black dark:text-zinc-100">
-              <option value="" disabled>
-                Learning Format
-              </option>
-              <option>One-on-One Online</option>
-              <option>Group Online</option>
-              <option>Hybrid (When Available)</option>
-            </select>
-
-            <input type="date" className="w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 text-zinc-900 outline-none ring-zinc-400 focus:ring dark:border-zinc-700 dark:bg-black dark:text-zinc-100" />
-          </div>
-
-          <textarea className="h-32 w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 text-zinc-900 outline-none ring-zinc-400 focus:ring dark:border-zinc-700 dark:bg-black dark:text-zinc-100" placeholder="Tell us your goals, current challenges, and what you want to achieve in the next 3 months." />
-
+      <ContentSection title="Book Your Guitar Institute Session">
+        <div className="glass space-y-4 rounded-3xl p-4 md:p-6">
+          <iframe
+            src="https://calendly.com/okundareayokunle99/gkguitarinstitute"
+            title="Great Kminor Guitar Institute Booking"
+            className="h-[720px] w-full rounded-2xl border border-zinc-300 dark:border-zinc-700"
+          />
           <div className="flex flex-wrap gap-3">
             <Button href="https://calendly.com/okundareayokunle99/gkguitarinstitute">
-              Book Guitar Institute Session
+              Open Calendly in Full Page
             </Button>
             <Button href="/contact" variant="ghost">Need Help First</Button>
           </div>
-        </form>
+        </div>
       </ContentSection>
     </>
   );
