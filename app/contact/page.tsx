@@ -1,5 +1,6 @@
 import { ContactForm, ContentSection, PageHero } from "@/components/sections/inner-page-sections";
 import { Button } from "@/components/ui/button";
+import { contactInfo } from "@/lib/data";
 
 export default function ContactPage() {
   return (
@@ -20,6 +21,15 @@ export default function ContactPage() {
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Button href="/services">View Services</Button>
             <Button href="/music" variant="ghost">Listen to Music</Button>
+          </div>
+
+          <div className="mt-8 space-y-2 text-sm text-zinc-700 dark:text-zinc-300">
+            <p>
+              Phone: <a href={`tel:${contactInfo.phone}`} className="underline">{contactInfo.phone}</a>
+            </p>
+            <p>
+              Address: <a href={contactInfo.mapsLink} className="underline">{contactInfo.address}</a>
+            </p>
           </div>
         </div>
       </ContentSection>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { GkLogo } from "@/components/brand/gk-logo";
-import { socialLinks } from "@/lib/data";
+import { contactInfo, socialLinks } from "@/lib/data";
 
 const siteLinks = [
   { href: "/", label: "Home" },
@@ -99,48 +99,72 @@ function compactLabel(label: string) {
 
 export function Footer() {
   return (
-    <footer className="border-t border-zinc-200 bg-white/95 backdrop-blur dark:border-zinc-800 dark:bg-black/95">
-      <div className="mx-auto grid w-[94%] max-w-7xl gap-8 py-10 lg:grid-cols-[1fr_auto] lg:items-start">
-        <div>
-          <GkLogo size="sm" plain showWordmark={false} className="w-fit" />
-          <p className="mt-2 max-w-xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-            Gospel Guitarist • Worship Leader • Recording Artist
-          </p>
-
-          <div className="mt-5">
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">Explore All Pages</p>
+    <footer className="border-t border-zinc-200 bg-gradient-to-b from-white to-zinc-50/70 dark:border-zinc-800 dark:from-black dark:to-zinc-950">
+      <div className="mx-auto w-[94%] max-w-7xl py-12">
+        <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr_0.85fr]">
+          <div className="space-y-4">
+            <GkLogo size="sm" plain showWordmark={false} className="w-fit" />
+            <p className="max-w-md text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+              Gospel Guitarist • Worship Leader • Recording Artist. Available for concerts, ministrations, private events, and mentorship.
+            </p>
+            <div className="space-y-1.5 text-sm text-zinc-700 dark:text-zinc-300">
+              <p>
+                <span className="font-semibold">Phone:</span>{" "}
+                <a href={`tel:${contactInfo.phone}`} className="underline decoration-zinc-400 underline-offset-4 hover:text-zinc-900 dark:hover:text-zinc-100">
+                  {contactInfo.phone}
+                </a>
+              </p>
+              <p>
+                <span className="font-semibold">Email:</span>{" "}
+                <a href={`mailto:${contactInfo.email}`} className="underline decoration-zinc-400 underline-offset-4 hover:text-zinc-900 dark:hover:text-zinc-100">
+                  {contactInfo.email}
+                </a>
+              </p>
+              <p>
+                <span className="font-semibold">Address:</span>{" "}
+                <a href={contactInfo.mapsLink} target="_blank" rel="noreferrer" className="underline decoration-zinc-400 underline-offset-4 hover:text-zinc-900 dark:hover:text-zinc-100">
+                  {contactInfo.address}
+                </a>
+              </p>
+            </div>
           </div>
 
-          <div className="flex flex-wrap gap-2">
-            {siteLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="accent-chip inline-flex rounded-full px-3 py-1.5 text-xs font-medium text-zinc-700 transition hover:-translate-y-0.5 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-100"
-              >
-                {link.label}
-              </Link>
-            ))}
+          <div>
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-zinc-500 dark:text-zinc-400">Quick Links</p>
+            <div className="grid grid-cols-2 gap-2">
+              {siteLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="rounded-lg px-2 py-1.5 text-sm text-zinc-700 transition hover:bg-white hover:text-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-900 dark:hover:text-zinc-100"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
           </div>
 
-          <p className="mt-4 text-xs text-zinc-500 dark:text-zinc-500">
-            © {new Date().getFullYear()} Great Kminor. All rights reserved.
-          </p>
+          <div>
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-zinc-500 dark:text-zinc-400">Music Platforms</p>
+            <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-2">
+              {socialLinks.map((social) => (
+                <Link
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-2.5 py-1.5 text-xs text-zinc-700 transition hover:-translate-y-0.5 hover:border-zinc-400 hover:text-zinc-900 dark:border-zinc-700 dark:bg-zinc-950 dark:text-zinc-300 dark:hover:border-zinc-500 dark:hover:text-white sm:px-3 sm:py-2"
+                >
+                  <PlatformIcon label={social.label} />
+                  <span className="truncate">{compactLabel(social.label)}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-3">
-          {socialLinks.map((social) => (
-            <Link
-              key={social.label}
-              href={social.href}
-              target="_blank"
-              rel="noreferrer"
-              className="group inline-flex items-center gap-2 rounded-full border border-zinc-200 px-2.5 py-1.5 text-xs text-zinc-700 transition hover:-translate-y-0.5 hover:border-zinc-400 hover:bg-zinc-50 hover:text-zinc-900 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-zinc-500 dark:hover:bg-zinc-900 dark:hover:text-white sm:px-3 sm:py-2 sm:text-sm"
-            >
-              <PlatformIcon label={social.label} />
-              <span className="truncate">{compactLabel(social.label)}</span>
-            </Link>
-          ))}
+        <div className="mt-10 border-t border-zinc-200 pt-4 text-center text-xs text-zinc-500 dark:border-zinc-800 dark:text-zinc-500">
+          © {new Date().getFullYear()} Great Kminor. All rights reserved.
         </div>
       </div>
     </footer>

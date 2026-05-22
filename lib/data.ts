@@ -25,6 +25,9 @@ export const socialLinks = [
 
 export const contactInfo = {
   email: "bookings@greatkminor.com",
+  phone: "+447877537576",
+  address: "24 Belmont Rd, Gillingham, London ME7 5JB, United Kingdom",
+  mapsLink: "https://maps.google.com/?q=24+Belmont+Rd,+Gillingham,+London+ME7+5JB,+United+Kingdom",
   instagram: "https://www.instagram.com/great_k.minor?igsh=MTJqcmdmM3ZkejBrMA%3D%3D&utm_source=qr",
   facebook: "https://www.facebook.com/profile.php?id=61556770236366",
   youtube: "https://youtube.com/@great_kminor?si=tjUpiKL_VZTm_vpH",

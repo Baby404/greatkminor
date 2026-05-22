@@ -352,6 +352,8 @@ export function GalleryPreview() {
 
 export function TestimonialsNewsletter() {
   const reviews = (reviewsData.reviews || []).slice(0, 3);
+  const totalRatings = reviewsData.place?.user_ratings_total ?? reviewsData.reviewCount ?? reviews.length;
+  const averageRating = reviewsData.place?.rating ?? 5;
 
   return (
     <section className="mx-auto w-[94%] max-w-7xl py-20">
@@ -359,7 +361,7 @@ export function TestimonialsNewsletter() {
         <div className="glass rounded-3xl p-6">
           <SectionHeading
             eyebrow="Google Reviews"
-            title={`Rated ${reviewsData.place?.rating ?? 5}/5 by ${reviewsData.place?.user_ratings_total ?? reviews.length} clients`}
+            title={`Rated ${averageRating}/5 on Google (${totalRatings} total ratings)`}
           />
 
           <div className="space-y-4">
