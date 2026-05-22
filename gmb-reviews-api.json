@@ -1,0 +1,62 @@
+{
+  "fetchedAt": "2026-05-22T11:47:36.027Z",
+  "source": "Google Places API",
+  "query": "Great Kminor",
+  "place": {
+    "place_id": "ChIJH2ymcWbN2EcRmPsMHhWoTK4",
+    "name": "Great Kminor",
+    "formatted_address": "24 Belmont Rd, Gillingham, London ME7 5JB, UK",
+    "google_maps_url": "https://maps.google.com/?cid=12559598269481417624",
+    "rating": 5,
+    "user_ratings_total": 6
+  },
+  "reviewCount": 5,
+  "reviews": [
+    {
+      "author_name": "Ayobami Alade OKUNDARE",
+      "rating": 5,
+      "relative_time_description": "a year ago",
+      "time": 1738706634,
+      "text": "Divinely Great......KMinor Gtr.",
+      "language": "en",
+      "author_url": "https://www.google.com/maps/contrib/100062991559622166508/reviews"
+    },
+    {
+      "author_name": "Joke Jolly",
+      "rating": 5,
+      "relative_time_description": "a year ago",
+      "time": 1738701786,
+      "text": "Very nice",
+      "language": "en",
+      "author_url": "https://www.google.com/maps/contrib/111179571529209415002/reviews"
+    },
+    {
+      "author_name": "Awopetu Busayo",
+      "rating": 5,
+      "relative_time_description": "a year ago",
+      "time": 1738700124,
+      "text": null,
+      "language": null,
+      "author_url": "https://www.google.com/maps/contrib/108830620022972984319/reviews"
+    },
+    {
+      "author_name": "Fransax",
+      "rating": 5,
+      "relative_time_description": "a year ago",
+      "time": 1738697287,
+      "text": "A professional and disciplined musician",
+      "language": "en",
+      "author_url": "https://www.google.com/maps/contrib/106560581178933623625/reviews"
+    },
+    {
+      "author_name": "Oluwapelumi Ajidahun",
+      "rating": 5,
+      "relative_time_description": "a year ago",
+      "time": 1738682973,
+      "text": null,
+      "language": null,
+      "author_url": "https://www.google.com/maps/contrib/102436490816668593578/reviews"
+    }
+  ],
+  "note": "Places API typically returns a limited subset of reviews, not full review history."
+}

@@ -100,7 +100,9 @@ export default function GuitarInstitutePage() {
           <textarea className="h-32 w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 text-zinc-900 outline-none ring-zinc-400 focus:ring dark:border-zinc-700 dark:bg-black dark:text-zinc-100" placeholder="Tell us your goals, current challenges, and what you want to achieve in the next 3 months." />
 
           <div className="flex flex-wrap gap-3">
-            <Button>Submit Registration</Button>
+            <Button href="https://calendly.com/okundareayokunle99/gkguitarinstitute">
+              Book Guitar Institute Session
+            </Button>
             <Button href="/contact" variant="ghost">Need Help First</Button>
           </div>
         </form>

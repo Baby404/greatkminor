@@ -6,11 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "scrape:gmb": "node scripts/scrape-gmb-reviews.mjs",
+    "fetch:gmb:api": "node scripts/fetch-gmb-reviews-api.mjs",
+    "pull:gmb:auto": "node scripts/auto-pull-gmb-reviews.mjs"
   },
   "dependencies": {
     "framer-motion": "^11.3.19",
     "next": "14.2.5",
+    "puppeteer-core": "^24.10.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
