@@ -15,6 +15,7 @@ import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { events } from "@/lib/data";
 import { fadeUp, stagger } from "@/lib/motion";
+import reviewsData from "@/gmb-reviews-api.json";
 
 export function HomeHero() {
   return (
@@ -302,7 +303,7 @@ export function AboutPreview() {
       <div className="order-2 lg:order-1">
         <SectionHeading
           eyebrow="My Biography"
-          title="From Ogun State to Notable Stages"
+          title="From Ogun State to Global Stages"
           subtitle="Born Ayokunle Moses Okundare in Ogun State, Nigeria, Great Kminor embarked on his musical journey at the age of fifteen. He completed a one-year basic course in Guitar and Music Theory at the MAC AYLIT (Music Art and Creativity As You Like It) Institute, where he sharpened his artistry and built the versatility to perform virtually every genre of music."
         />
         <p className="mb-5 max-w-2xl text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
@@ -350,15 +351,36 @@ export function GalleryPreview() {
 }
 
 export function TestimonialsNewsletter() {
+  const reviews = (reviewsData.reviews || []).slice(0, 3);
+
   return (
     <section className="mx-auto w-[94%] max-w-7xl py-20">
       <div className="grid gap-6 lg:grid-cols-2">
         <div className="glass rounded-3xl p-6">
-          <SectionHeading eyebrow="Testimonials" title="Trusted by Churches, Events & Brands" />
-          <p className="text-zinc-700 dark:text-zinc-300">
-            “Great Kminor brought precision, excellence, and tangible spiritual depth to our conference.”
-          </p>
-          <p className="mt-3 text-sm text-zinc-500 dark:text-zinc-400">— Worship Director, Lagos</p>
+          <SectionHeading
+            eyebrow="Google Reviews"
+            title={`Rated ${reviewsData.place?.rating ?? 5}/5 by ${reviewsData.place?.user_ratings_total ?? reviews.length} clients`}
+          />
+
+          <div className="space-y-4">
+            {reviews.map((review, index) => (
+              <article key={`${review.author_name}-${index}`} className="rounded-2xl border border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-950">
+                <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
+                  “{review.text || "Excellent service and musicianship."}”
+                </p>
+                <div className="mt-3 flex items-center justify-between gap-3">
+                  <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">— {review.author_name || "Google User"}</p>
+                  <p className="text-xs text-zinc-500 dark:text-zinc-400">{review.rating ? `${review.rating}/5` : "5/5"}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-4">
+            <Button href={reviewsData.place?.google_maps_url || "https://maps.google.com"} variant="ghost">
+              View all on Google
+            </Button>
+          </div>
         </div>
         <div className="glass rounded-3xl p-6">
           <SectionHeading eyebrow="Newsletter" title="Get Music & Event Updates" />
