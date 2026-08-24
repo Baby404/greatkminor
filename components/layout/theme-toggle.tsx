@@ -27,7 +27,7 @@ export function ThemeToggle() {
     <button
       type="button"
       onClick={toggleTheme}
-      aria-label="Toggle theme"
+      aria-label={mounted ? (isDark ? "Switch to light mode" : "Switch to dark mode") : "Toggle theme"}
       title={mounted ? (isDark ? "Switch to light mode" : "Switch to dark mode") : "Toggle theme"}
       className="rounded-full border border-zinc-300 bg-white px-3 py-2 text-xs font-semibold uppercase tracking-widest text-zinc-700 transition hover:bg-zinc-100 dark:border-zinc-700 dark:bg-black dark:text-zinc-100 dark:hover:bg-zinc-900"
     >

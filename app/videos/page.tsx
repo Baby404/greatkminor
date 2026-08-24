@@ -1,4 +1,8 @@
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { pageMetadata } from "@/lib/metadata";
+
+export const metadata = pageMetadata("Videos", "Watch the latest Great Kminor performances, worship moments, and official video releases.", "/videos");
 
 type YouTubeVideo = {
   id: string;
@@ -8,7 +12,7 @@ type YouTubeVideo = {
   published: string;
 };
 
-export const revalidate = 300;
+export const revalidate = 900;
 
 const CHANNEL_ID = "UCllLCN3xAUW8F8xBHX858Uw";
 
@@ -66,14 +70,15 @@ export default async function VideosPage() {
         Watch past uploads and new releases from the official channel.
       </p>
 
-      <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {videos.map((video) => (
+      {videos.length ? (
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {videos.map((video) => (
           <a
             key={video.id}
             href={video.url}
             target="_blank"
             rel="noreferrer"
-            className="glass block overflow-hidden rounded-2xl"
+            className="glass group block overflow-hidden rounded-2xl transition hover:-translate-y-1 hover:shadow-xl"
           >
             <Image
               src={video.thumbnail}
@@ -84,13 +89,24 @@ export default async function VideosPage() {
               sizes="(min-width: 1024px) 31vw, (min-width: 640px) 47vw, 94vw"
               className="aspect-video w-full object-cover"
             />
-            <div className="p-3">
+            <div className="p-4">
               <p className="line-clamp-2 text-sm font-medium text-zinc-800 dark:text-zinc-100">{video.title}</p>
+              <p className="mt-2 text-xs text-zinc-500 dark:text-zinc-400">
+                {new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "short", year: "numeric" }).format(new Date(video.published))}
+              </p>
             </div>
           </a>
-        ))}
-      </div>
+          ))}
+        </div>
+      ) : (
+        <div className="glass mt-10 rounded-3xl p-8 text-center md:p-12">
+          <h2 className="font-display text-3xl text-zinc-900 dark:text-zinc-100">Watch on the official channel</h2>
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+            The latest uploads could not be loaded right now. The complete video archive is still available directly on YouTube.
+          </p>
+          <Button href="https://www.youtube.com/@great_kminor" className="mt-6">Visit YouTube</Button>
+        </div>
+      )}
     </section>
   );
 }
-

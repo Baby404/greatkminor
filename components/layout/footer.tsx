@@ -57,6 +57,12 @@ function PlatformIcon({ label }: { label: string }) {
           <path d="M16 4v10.6a2.9 2.9 0 1 1-1.6-2.6V6.1L8.2 7.4v8.1a2.9 2.9 0 1 1-1.6-2.6V6.1L16 4z" />
         </svg>
       );
+    case "Audiomack":
+      return (
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden className={cls}>
+          <path d="M3 16h2V8H3v8zm4 3h2V5H7v14zm4-5h2v-4h-2v4zm4 3h2V7h-2v10zm4-2h2V9h-2v6z" />
+        </svg>
+      );
     case "Boomplay":
       return (
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden className={cls}>

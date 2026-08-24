@@ -12,9 +12,10 @@ import galleryImage4 from "@/components/brand/greatkminor (13).jpg";
 import galleryImage5 from "@/components/brand/greatkminor (14).jpg";
 import galleryImage6 from "@/components/brand/greatkminor (15).jpg";
 import { Button } from "@/components/ui/button";
+import { NewsletterForm } from "@/components/forms/newsletter-form";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { events } from "@/lib/data";
 import { fadeUp, stagger } from "@/lib/motion";
+import { musicCatalog } from "@/lib/music-catalog";
 import reviewsData from "@/gmb-reviews-api.json";
 
 export function HomeHero() {
@@ -131,23 +132,14 @@ export function HomeHero() {
 }
 
 export function FeaturedMusic() {
-  const featuredTracks = [
-    {
-      title: "Ebe (Supplication)",
-      cover: "https://i.scdn.co/image/ab67616d0000b273a41f1f26503b95aa4265540c",
-      link: "https://greatkminor.fanlink.tv/Ebe"
-    },
-    {
-      title: "Hymn Fusion",
-      cover: "https://ar.toneden.io/74933461/8df9248e-dc60-4110-99fc-7c1a33fbb7c8",
-      link: "https://greatkminor.fanlink.tv/hymnfusion"
-    },
-    {
-      title: "Amapiano Praise",
-      cover: "https://i.scdn.co/image/ab67616d0000b273d5755767f2c9156302ef919c",
-      link: "https://greatkminor.fanlink.tv/unusualamapianopraise"
-    }
-  ];
+  const featuredTracks = musicCatalog
+    .filter((release) => release.category === "Official release")
+    .slice(0, 3)
+    .map((release) => ({
+      ...release,
+      link: Object.values(release.platforms)[0] as string,
+      platformNames: Object.keys(release.platforms).join(", ")
+    }));
 
   return (
     <section className="mx-auto w-[94%] max-w-7xl py-20">
@@ -170,11 +162,11 @@ export function FeaturedMusic() {
       <div className="grid gap-6 md:grid-cols-3">
         {featuredTracks.map((track) => (
           <article key={track.title} className="glass overflow-hidden rounded-2xl transition hover:-translate-y-1">
-            <Image src={track.cover} alt={track.title} width={600} height={600} className="aspect-square w-full object-cover" />
+            <Image src={track.image} alt={`${track.title} official artwork`} width={600} height={600} className="aspect-square w-full bg-zinc-100 object-contain dark:bg-zinc-900" />
             <div className="p-5">
-              <p className="text-xs uppercase tracking-widest text-zinc-500 dark:text-zinc-400">Single</p>
+              <p className="text-xs uppercase tracking-widest text-zinc-500 dark:text-zinc-400">{track.category}</p>
               <h3 className="mt-2 font-display text-2xl text-zinc-900 dark:text-zinc-100">{track.title}</h3>
-              <p className="mt-3 text-sm text-zinc-600 dark:text-zinc-400">Available on Spotify, Apple Music, YouTube Music, Deezer, and Amazon Music.</p>
+              <p className="mt-3 text-sm text-zinc-600 dark:text-zinc-400">Direct links available for: {track.platformNames}.</p>
               <Button href={track.link} className="mt-5">
               Stream
               </Button>
@@ -241,62 +233,6 @@ export function ServicesPreview() {
   );
 }
 
-export function RecentVideos() {
-  return (
-    <section className="mx-auto w-[94%] max-w-7xl py-20">
-      <SectionHeading eyebrow="Recent Videos" title="Unusual Praise Medley Live" />
-      <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
-        <a
-          href="https://youtube.com/@great_kminor?si=tjUpiKL_VZTm_vpH"
-          target="_blank"
-          rel="noreferrer"
-          className="group glass block overflow-hidden rounded-3xl"
-        >
-          <div className="flex aspect-video items-center justify-center bg-zinc-100 text-center dark:bg-zinc-900">
-            <p className="px-6 text-sm text-zinc-600 dark:text-zinc-300">
-              Watch on YouTube: Great Kminor Official Channel
-            </p>
-          </div>
-        </a>
-
-        <div className="glass rounded-3xl p-6">
-          <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
-            Experience how Great Kminor is ministering through his exceptional guitar artistry—an experience you won’t want to
-            miss, Stay Blessed!
-          </p>
-          <p className="mt-4 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
-            In the vibrant world of music, Great Kminor stands out as a minstrel who defies conventional boundaries. His unique
-            approach to playing the guitar is not just unusual; it’s groundbreaking.
-          </p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Button href="https://youtube.com/@great_kminor?si=tjUpiKL_VZTm_vpH">Watch Video</Button>
-            <Button href="https://www.youtube.com/@great_kminor" variant="ghost">
-              More Videos
-            </Button>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-export function UpcomingEventsPreview() {
-  return (
-    <section className="mx-auto w-[94%] max-w-7xl py-20">
-      <SectionHeading eyebrow="Upcoming Events" title="Ministrations & Concerts" action={<Button href="/contact" variant="ghost">Book an Event</Button>} />
-      <div className="space-y-4">
-        {events.map((event) => (
-          <div key={event.date + event.city} className="glass flex flex-wrap items-center justify-between gap-4 rounded-2xl p-5">
-            <p className="font-semibold text-zinc-900 dark:text-zinc-100">{event.date}</p>
-            <p className="text-zinc-700 dark:text-zinc-300">{event.city}</p>
-            <p className="text-zinc-500 dark:text-zinc-400">{event.venue}</p>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
-
 export function AboutPreview() {
   return (
     <section className="mx-auto grid w-[94%] max-w-7xl gap-8 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
@@ -331,13 +267,13 @@ export function AboutPreview() {
 export function GalleryPreview() {
   return (
     <section className="mx-auto w-[94%] max-w-7xl py-20">
-      <SectionHeading eyebrow="Visual Journey" title="Performance & Studio Moments" action={<Button href="/about" variant="ghost">View More Moments</Button>} />
+      <SectionHeading eyebrow="Visual Journey" title="Performance & Studio Moments" action={<Button href="/gallery" variant="ghost">View Full Gallery</Button>} />
       <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-6">
         {[galleryImage1, galleryImage2, galleryImage3, galleryImage4, galleryImage5, galleryImage6].map((src, i) => (
           <Image
             key={i}
             src={src}
-            alt="Great Kminor gallery preview"
+            alt={`Great Kminor performance gallery preview ${i + 1}`}
             width={700}
             height={500}
             quality={100}
@@ -351,7 +287,7 @@ export function GalleryPreview() {
 }
 
 export function TestimonialsNewsletter() {
-  const reviews = (reviewsData.reviews || []).slice(0, 3);
+  const reviews = (reviewsData.reviews || []).filter((review) => Boolean(review.text)).slice(0, 3);
   const totalRatings = reviewsData.place?.user_ratings_total ?? reviewsData.reviewCount ?? reviews.length;
   const averageRating = reviewsData.place?.rating ?? 5;
 
@@ -368,7 +304,7 @@ export function TestimonialsNewsletter() {
             {reviews.map((review, index) => (
               <article key={`${review.author_name}-${index}`} className="rounded-2xl border border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-950">
                 <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
-                  “{review.text || "Excellent service and musicianship."}”
+                  “{review.text}”
                 </p>
                 <div className="mt-3 flex items-center justify-between gap-3">
                   <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">— {review.author_name || "Google User"}</p>
@@ -386,14 +322,7 @@ export function TestimonialsNewsletter() {
         </div>
         <div className="glass rounded-3xl p-6">
           <SectionHeading eyebrow="Newsletter" title="Get Music & Event Updates" />
-          <form className="mt-3 flex flex-col gap-3 sm:flex-row">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="w-full rounded-full border border-zinc-300 bg-white px-4 py-3 text-sm text-zinc-900 outline-none ring-zinc-400 placeholder:text-zinc-500 focus:ring dark:border-zinc-700 dark:bg-black dark:text-zinc-100"
-            />
-            <Button>Subscribe</Button>
-          </form>
+          <NewsletterForm />
         </div>
       </div>
     </section>

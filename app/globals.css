@@ -41,6 +41,34 @@ body {
   scroll-behavior: smooth;
 }
 
+::selection {
+  background: color-mix(in oklab, var(--accent-orange) 28%, transparent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-orange);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 100;
+  transform: translateY(-160%);
+  border-radius: 9999px;
+  background: var(--fg);
+  color: var(--bg);
+  padding: 0.7rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  transition: transform 150ms ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
 body {
   font-family: Inter, system-ui, sans-serif;
   transition: background-color 250ms ease, color 250ms ease;
@@ -146,4 +174,19 @@ body {
 .masonry-item {
   break-inside: avoid;
   margin-bottom: 1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html,
+  body {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

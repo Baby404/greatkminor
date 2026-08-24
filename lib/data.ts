@@ -17,6 +17,7 @@ export const socialLinks = [
   { label: "TikTok", href: "https://www.tiktok.com/@greatkminor" },
   { label: "Spotify", href: "https://open.spotify.com/artist/0APfsQA8C6C2MmZgcMjtOn" },
   { label: "Apple Music", href: "https://music.apple.com/ng/artist/great-kminor/1734895873" },
+  { label: "Audiomack", href: "https://audiomack.com/kminor-okundare-ayokunle" },
   { label: "Boomplay", href: "https://www.boomplay.com/artists/23534974" },
   { label: "Deezer", href: "https://www.deezer.com/en/artist/257520252" },
   { label: "YouTube Music", href: "https://music.youtube.com/channel/UCxeVTqdQExqJnJYWdNL2qQw?si=E_DKBtbsdPzWD8HP" },
@@ -33,9 +34,3 @@ export const contactInfo = {
   youtube: "https://youtube.com/@great_kminor?si=tjUpiKL_VZTm_vpH",
   tiktok: "https://www.tiktok.com/@greatkminor"
 };
-
-export const events = [
-  { date: "Jun 15, 2026", city: "Lagos", venue: "Eko Worship Arena" },
-  { date: "Jul 02, 2026", city: "Abuja", venue: "Faith Convention Hall" },
-  { date: "Aug 10, 2026", city: "Port Harcourt", venue: "Rivers Praise Centre" }
-];

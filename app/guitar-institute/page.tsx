@@ -1,5 +1,8 @@
 import { ContentSection, GenericGrid, PageHero } from "@/components/sections/inner-page-sections";
 import { Button } from "@/components/ui/button";
+import { pageMetadata } from "@/lib/metadata";
+
+export const metadata = pageMetadata("Guitar Institute", "Build technique, tone, creativity, and live-performance confidence through Great Kminor's guitar mentorship.", "/guitar-institute");
 
 export default function GuitarInstitutePage() {
   return (
@@ -57,6 +60,7 @@ export default function GuitarInstitutePage() {
           <iframe
             src="https://calendly.com/okundareayokunle99/gkguitarinstitute"
             title="Great Kminor Guitar Institute Booking"
+            loading="lazy"
             className="h-[720px] w-full rounded-2xl border border-zinc-300 dark:border-zinc-700"
           />
           <div className="flex flex-wrap gap-3">

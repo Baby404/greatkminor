@@ -1,6 +1,10 @@
-import { ContactForm, ContentSection, PageHero } from "@/components/sections/inner-page-sections";
+import { ContentSection, PageHero } from "@/components/sections/inner-page-sections";
+import { ContactForm } from "@/components/forms/contact-form";
 import { Button } from "@/components/ui/button";
 import { contactInfo } from "@/lib/data";
+import { pageMetadata } from "@/lib/metadata";
+
+export const metadata = pageMetadata("Contact & Booking", "Contact Great Kminor's team for concerts, events, collaborations, ministrations, and training inquiries.", "/contact");
 
 export default function ContactPage() {
   return (
@@ -28,7 +32,10 @@ export default function ContactPage() {
               Phone: <a href={`tel:${contactInfo.phone}`} className="underline">{contactInfo.phone}</a>
             </p>
             <p>
-              Address: <a href={contactInfo.mapsLink} className="underline">{contactInfo.address}</a>
+              Email: <a href={`mailto:${contactInfo.email}`} className="underline">{contactInfo.email}</a>
+            </p>
+            <p>
+              Address: <a href={contactInfo.mapsLink} target="_blank" rel="noreferrer" className="underline">{contactInfo.address}</a>
             </p>
           </div>
         </div>

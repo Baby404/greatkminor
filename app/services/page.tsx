@@ -1,5 +1,8 @@
 import { ContentSection, PageHero } from "@/components/sections/inner-page-sections";
 import { Button } from "@/components/ui/button";
+import { pageMetadata } from "@/lib/metadata";
+
+export const metadata = pageMetadata("Services & Booking", "Book Great Kminor for live band performances, corporate and social events, ministrations, and guitar training.", "/services");
 
 const services = [
   {
@@ -138,4 +141,3 @@ export default function ServicesPage() {
     </>
   );
 }
-

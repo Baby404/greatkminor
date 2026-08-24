@@ -3,6 +3,9 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import aboutImage1 from "@/components/brand/IMG_5415.JPG.jpeg";
 import aboutImage2 from "@/components/brand/greatkminor (4).png";
+import { pageMetadata } from "@/lib/metadata";
+
+export const metadata = pageMetadata("About", "Meet Great Kminor and discover the story, training, artistry, and global vision behind his music.", "/about");
 
 export default function AboutPage() {
   return (

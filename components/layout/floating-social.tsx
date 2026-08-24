@@ -17,6 +17,8 @@ export function FloatingSocial() {
                 <Link
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noreferrer"
                   className="rounded-lg border border-zinc-200 px-2 py-2 text-center text-[11px] text-zinc-700 transition hover:-translate-y-0.5 hover:bg-zinc-100 hover:text-black dark:border-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-900 dark:hover:text-white"
                 >
                   {social.label}

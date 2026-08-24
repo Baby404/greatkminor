@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/ui/section-heading";
 import galleryImage1 from "@/components/brand/greatkminor (4).jpg";
 import galleryImage2 from "@/components/brand/greatkminor (5).jpg";
@@ -45,44 +44,6 @@ export function GenericGrid({ items }: { items: { title: string; text: string }[
   );
 }
 
-export function ContactForm() {
-  return (
-    <form className="glass space-y-4 rounded-3xl p-6">
-      <input className="w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 text-zinc-900 outline-none ring-zinc-400 focus:ring dark:border-zinc-700 dark:bg-black dark:text-zinc-100" placeholder="Full Name" />
-      <input className="w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 text-zinc-900 outline-none ring-zinc-400 focus:ring dark:border-zinc-700 dark:bg-black dark:text-zinc-100" placeholder="Email Address" />
-      <input className="w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 text-zinc-900 outline-none ring-zinc-400 focus:ring dark:border-zinc-700 dark:bg-black dark:text-zinc-100" placeholder="Phone Number" />
-
-      <select defaultValue="" className="w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 text-zinc-900 outline-none ring-zinc-400 focus:ring dark:border-zinc-700 dark:bg-black dark:text-zinc-100">
-        <option value="" disabled>
-          Service Type
-        </option>
-        <option>Live Band</option>
-        <option>Corporate/Social Event</option>
-        <option>Online Guitar Training</option>
-        <option>Live Ministration</option>
-      </select>
-
-      <div className="grid gap-4 md:grid-cols-2">
-        <input type="date" className="w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 text-zinc-900 outline-none ring-zinc-400 focus:ring dark:border-zinc-700 dark:bg-black dark:text-zinc-100" />
-        <input className="w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 text-zinc-900 outline-none ring-zinc-400 focus:ring dark:border-zinc-700 dark:bg-black dark:text-zinc-100" placeholder="Location" />
-      </div>
-
-      <select defaultValue="" className="w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 text-zinc-900 outline-none ring-zinc-400 focus:ring dark:border-zinc-700 dark:bg-black dark:text-zinc-100">
-        <option value="" disabled>
-          Budget Range
-        </option>
-        <option>Below £500</option>
-        <option>£500 - £1,000</option>
-        <option>£1,000 - £2,500</option>
-        <option>£2,500+</option>
-      </select>
-
-      <textarea className="h-32 w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 text-zinc-900 outline-none ring-zinc-400 focus:ring dark:border-zinc-700 dark:bg-black dark:text-zinc-100" placeholder="Message" />
-      <Button>Send Inquiry</Button>
-    </form>
-  );
-}
-
 export function GalleryMasonry() {
   const images = [
     galleryImage1,
@@ -116,11 +77,11 @@ export function GalleryMasonry() {
             href={fullSrc}
             target="_blank"
             rel="noreferrer"
-            aria-label="Open gallery image"
+            aria-label={`Open gallery image ${idx + 1}`}
           >
             <Image
               src={src}
-              alt="Great Kminor gallery"
+              alt={`Great Kminor performance gallery image ${idx + 1}`}
               width={700}
               height={900}
               quality={100}

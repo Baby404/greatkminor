@@ -68,7 +68,7 @@ export async function RecentVideos() {
       <div className="mb-8 md:mb-12">
         <p className="mb-2 text-xs uppercase tracking-[0.3em] text-zinc-500 dark:text-zinc-400">Recent Videos</p>
         <h2 className="font-display text-3xl text-zinc-900 dark:text-zinc-100 md:text-5xl">
-          <span className="text-gradient">Unusual Praise Medley Live</span>
+          <span className="text-gradient">Latest from Great Kminor</span>
         </h2>
       </div>
 
@@ -110,12 +110,10 @@ export async function RecentVideos() {
 
         <div className="glass rounded-3xl p-6">
           <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
-            Experience how Great Kminor is ministering through his exceptional guitar artistry—an experience you won’t want to
-            miss, Stay Blessed!
+            Experience Great Kminor’s guitar artistry through recent performances, worship moments, rehearsals, and new visual releases.
           </p>
           <p className="mt-4 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
-            In the vibrant world of music, Great Kminor stands out as a minstrel who defies conventional boundaries. His unique
-            approach to playing the guitar is not just unusual; it’s groundbreaking.
+            Subscribe to the official channel for new uploads and explore the full video archive for more live moments.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a
@@ -139,4 +137,3 @@ export async function RecentVideos() {
     </section>
   );
 }
-
