@@ -2,7 +2,6 @@ import { ContentSection, GenericGrid, PageHero } from "@/components/sections/inn
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import aboutImage1 from "@/components/brand/IMG_5415.JPG.jpeg";
-import aboutImage2 from "@/components/brand/greatkminor (4).png";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata("About", "Meet Great Kminor and discover the story, training, artistry, and global vision behind his music.", "/about");
@@ -106,8 +105,8 @@ export default function AboutPage() {
           <div className="order-1 lg:order-2">
             <div className="glass relative ml-auto aspect-[3/4] w-full max-w-[320px] overflow-hidden rounded-3xl">
             <Image
-              src={aboutImage2}
-              alt="Great Kminor portrait"
+              src="/music/christmas-carol-medley.webp"
+              alt="Great Kminor Christmas Carol Medley artwork"
               fill
               quality={100}
               sizes="(min-width: 1024px) 20vw, (min-width: 768px) 45vw, 94vw"
